@@ -1,0 +1,50 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    width: min(80ch, 100vh - 4rem);
+    margin-inline: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.active {
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.hero {
+    display: grid;
+    grid-template-areas: 'stack';
+}
+
+.hero > * {
+    grid-area: stack;
+    color: white;
+}
+
+.goober {
+    padding-top: 2rem;
+}
+
+.gooba {
+    text-align: center;
+    margin-top: 0.6rem;
+}

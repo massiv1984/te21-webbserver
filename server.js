@@ -11,6 +11,12 @@ nunjucks.configure('views', {
 });
 
 app.use(express.static('public'))
+
+app.use(function (req, res, next){
+    res.locals.url = req.originalUrl
+    next()
+})
+
 app.use("/", indexRouter)
 
 app.listen(port, () => {
