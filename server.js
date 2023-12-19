@@ -1,15 +1,19 @@
 const express = require("express")
+const bodyParser = require('body-parser')
 const nunjucks = require('nunjucks')
-const app = express()
 const indexRouter = require("./routes/index")
-
+const xmasRouter = require('./routes/xmas')
 const port = process.env.PORT || 3000
+
+const app = express()
 
 nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static('public'))
 
 app.use(function (req, res, next){
@@ -18,6 +22,7 @@ app.use(function (req, res, next){
 })
 
 app.use("/", indexRouter)
+app.use("/xmas", xmasRouter)
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)
