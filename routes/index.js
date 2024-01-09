@@ -6,7 +6,7 @@ router.get("/", function (req, res) {
 })
 
 router.get("/about", function (req, res) {
-  res.render('about.njk', { title: 'SMAUEL SER DIG' })
+  res.render('about.njk', { title: 'Om' })
 })
 
 module.exports = router
