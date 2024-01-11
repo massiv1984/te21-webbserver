@@ -9,4 +9,8 @@ router.get("/about", function (req, res) {
   res.render('about.njk', { title: 'Om' })
 })
 
+router.get("/contact", function (req,res) {
+  res.render('contact.njk', { title: 'Kontakta oss' })
+})
+
 module.exports = router
